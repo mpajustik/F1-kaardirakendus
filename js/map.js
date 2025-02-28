@@ -38,18 +38,20 @@ fetch('js/circuits.json')
                 .addTo(map)
                 .bindTooltip(circuit.name, { permanent: false, direction: "top" }) // Lisab tooltipi
                 .bindPopup(`
-                    <h3>${circuit.country} ${circuit.name}</h3>
-                    <p><strong>Raja pikkus:</strong> ${circuit.length_km} km</p>
-                    <p><strong>Ringide arv:</strong> ${circuit.laps}</p>
-                    <p><strong>Tutvustus:</strong> ${circuit.description}</p>
-                    <a href="#lightbox" onclick="showLightbox('${circuit.map}')">
-                        <img src="${circuit.map}" alt="Raja kaart" width="200">
-                    </a><br>
-                    <br>
-                    <video width="250" controls>
-                        <source src="${circuit.video}" type="video/mp4">
-                        Sinu brauser ei toeta videot.
-                    </video>
+                    <div class="popup-scroll">
+                        <h3>${circuit.country} ${circuit.name}</h3>
+                        <p><strong>Raja pikkus:</strong> ${circuit.length_km} km</p>
+                        <p><strong>Ringide arv:</strong> ${circuit.laps}</p>
+                        <p class="popup-description"><strong>Tutvustus:</strong> ${circuit.description}</p>
+                        <a href="#lightbox" onclick="showLightbox('${circuit.map}')">
+                            <img src="${circuit.map}" alt="Raja kaart" width="200">
+                        </a><br>
+                        <br>
+                        <video width="250" controls>
+                            <source src="${circuit.video}" type="video/mp4">
+                            Sinu brauser ei toeta videot.
+                        </video>
+                    </div>
                 `);
         });
     })

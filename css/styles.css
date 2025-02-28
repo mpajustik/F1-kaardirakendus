@@ -49,3 +49,39 @@ html, body {
     cursor: pointer;
     text-decoration: none;
 }
+
+.leaflet-popup-content {
+    max-height: 400px;  /* Määra popupi maksimaalne kõrgus */
+    overflow-y: auto;   /* Luba vertikaalne kerimine */
+}
+
+.leaflet-popup-content img {
+    max-width: 100%;   /* Muudab pildi popupi sees proportsionaalseks */
+    height: auto;
+}
+
+.leaflet-popup-content iframe, 
+.leaflet-popup-content video {
+    max-width: 100%;   /* Videod ei tohiks popupist välja minna */
+    height: auto;
+}
+
+.leaflet-popup-content p {
+    margin-bottom: 10px !important;  /* Lisab ruumi iga lõigu alla */
+}
+
+.popup-description {
+    margin-top: 10px !important;     /* Lisab vahe ülalpool */
+    margin-bottom: 15px !important;  /* Lisab ruumi descriptioni alla */
+    font-size: 13px;      /* Saab muuta ka kirjasuurust */
+    margin-right: 15px !important;
+    text-align: justify;
+    line-height: 1.5;     /* Parandab loetavust */
+}
+
+
+@media screen and (max-width: 600px) {
+    .leaflet-popup-content {
+        max-height: 200px; /* Väiksem kõrgus väiksematel ekraanidel */
+    }
+}
